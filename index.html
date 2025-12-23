@@ -8,67 +8,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0c0a18;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        #background-video-container {
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            overflow: hidden;
-        }
-        #background-video {
-            min-width: 100%;
-            min-height: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
-        #video-overlay {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle, rgba(12,10,24,0.4) 0%, rgba(12,10,24,0.9) 100%);
-            z-index: -1;
-        }
-
-        /* Sticky Header Transition */
-        #sticky-header {
-            transition: top 0.4s ease-in-out;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0c0a18; }
+        html { scroll-behavior: smooth; }
+        #background-video-container { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
+        #background-video { min-width: 100%; min-height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; }
+        #video-overlay { position: fixed; inset: 0; background: radial-gradient(circle, rgba(12,10,24,0.4) 0%, rgba(12,10,24,0.9) 100%); z-index: -1; }
+        #sticky-header { transition: top 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in { animation: fadeIn 1s ease-out forwards; }
         .fade-in-delay-1 { animation-delay: 0.2s; }
         .fade-in-delay-2 { animation-delay: 0.4s; }
         .fade-in-delay-3 { animation-delay: 0.6s; }
         .fade-in-delay-4 { animation-delay: 0.8s; }
-        
-        .glass-card {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .item-container { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(99, 102, 241, 0.15); border-radius: 0.75rem; padding: 1.5rem; transition: all 0.3s ease; }
+        .item-container:hover { border-color: #6366f1; transform: translateY(-2px); }
+
+        /* Mobile Menu Styling */
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
         }
-        .item-container {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(99, 102, 241, 0.15);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        .item-container:hover {
-            border-color: #6366f1;
-            transform: translateY(-2px);
-        }
+        #mobile-menu.active { display: flex; }
     </style>
 </head>
 <body class="text-gray-200">
@@ -81,16 +49,28 @@
     <div id="video-overlay"></div>
 
     <nav id="sticky-header" class="fixed top-[-100px] left-0 right-0 bg-slate-900/90 backdrop-blur-lg border-b border-slate-700 shadow-xl z-50 p-3">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <div class="max-w-6xl mx-auto flex justify-between items-center relative">
             <div class="flex items-center space-x-3">
                 <img src="Images/My_Pic.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-indigo-500">
                 <span class="text-white font-bold text-lg">Itumeleng W. Kganyago</span>
             </div>
+            
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#about-me" class="text-gray-300 hover:text-white transition">About</a>
                 <a href="#skills" class="text-gray-300 hover:text-white transition">Skills</a>
                 <a href="#projects" class="text-gray-300 hover:text-white transition">Projects</a>
                 <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+            </div>
+
+            <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div id="mobile-menu" class="md:hidden flex flex-col items-center space-y-4 font-medium">
+                <a href="#about-me" class="mobile-link text-gray-300 hover:text-white transition">About</a>
+                <a href="#skills" class="mobile-link text-gray-300 hover:text-white transition">Skills</a>
+                <a href="#projects" class="mobile-link text-gray-300 hover:text-white transition">Projects</a>
+                <a href="#contact" class="mobile-link text-gray-300 hover:text-white transition">Contact</a>
             </div>
         </div>
     </nav>
@@ -109,12 +89,10 @@
             <a href="#main-content" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-500 transform hover:scale-105 transition duration-300 w-full sm:w-auto">
                 <i class="fas fa-arrow-down mr-2"></i> View My Work
             </a>
-            
             <a href="https://github.com/ItumelengKganyago/https---github.com-ItumelengKganyago-My-CV-Portfolio/raw/main/Images/Itumeleng_Kganyago_CV.pdf" 
                download class="bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-slate-700 transform hover:scale-105 transition duration-300 w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-600">
                 <i class="fas fa-download"></i> Download CV
             </a>
-
             <div class="flex items-center justify-center gap-4">
                 <a href="https://www.linkedin.com/in/itumeleng-wonder-kganyago-32336427a" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-transform hover:scale-110">
                     <i class="fab fa-linkedin"></i>
@@ -135,9 +113,10 @@
             <section id="about-me" class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">About Me</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    Hello! I'm Itumeleng Wonder Kganyago, a dedicated BSc Information Technology graduate from North-West University (NWU), with degree requirements completed and graduation pending. My journey in IT is fueled by a strong interest in programming with python, database design and systems management. I thrive on solving complex problems and am constantly expanding my knowledge in web development, networking, and programming.  This portfolio showcases my academic journey, technical proficiencies, and projects, reflecting my commitment to continuous learning and contributing to innovative solutions.
+                    Hello! I'm Itumeleng Wonder Kganyago, a dedicated BSc Information Technology graduate from North-West University (NWU), with degree requirements completed and graduation pending. My journey in IT is fueled by a strong interest in programming with python, database design and systems management. I thrive on solving complex problems and am constantly expanding my knowledge in web development, networking, and programming. This portfolio showcases my academic journey, technical proficiencies, and projects, reflecting my commitment to continuous learning and contributing to innovative solutions.
                 </p>
             </section>
+
             <section class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Professional Summary</h2>
                 <p class="text-gray-300 leading-relaxed">
@@ -166,12 +145,12 @@
                         <li>Communications skills</li>
                         <li>Data analytics</li>
                         <li>Artificial Intelligence</li>
-                        <li>Computer Networks </li>
+                        <li>Computer Networks</li>
                         <li>Databases</li>
                         <li>Advanced Databases</li>
                         <li>Decision Supports Systems I & II</li>
                         <li>IT Developments</li>
-                        <li>Operating Systems </li>
+                        <li>Operating Systems</li>
                     </ul>
                 </div>
                 <div class="item-container">
@@ -224,7 +203,6 @@
 
             <section id="projects" class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Projects</h2>
-                
                 <div class="space-y-6">
                     <div class="item-container">
                         <h3 class="text-xl font-bold text-white">Virtual CV (This Portfolio)</h3>
@@ -232,49 +210,39 @@
                         <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
                             <li>Developed a dynamic, responsive portfolio website from scratch.</li>
                             <li>Utilizes HTML and Tailwind CSS for styling.</li>
-                            <li>Designed to be visually engaging and user-friendly.</li>
                         </ul>
                     </div>
-
                     <div class="item-container">
                         <h3 class="text-xl font-bold text-white">Full-Stack Voting System App</h3>
                         <p class="text-indigo-400 text-sm mb-3">Group Project</p>
                         <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
                             <li>Collaborated in a team to build a Voting system for University elections.</li>
-                            <li>The app utilizes CSS, HTML and JAVA developed using ANDROID STUDIO.</li>
-                            <li>Designed to be visually engaging and user-friendly.</li>
+                            <li>Utilizes CSS, HTML and JAVA developed using ANDROID STUDIO.</li>
                         </ul>
                     </div>
-
                     <div class="item-container">
                         <h3 class="text-xl font-bold text-white">E Commerce System</h3>
                         <p class="text-indigo-400 text-sm mb-3">Group Project</p>
                         <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
-                            <li>Collaborated in a team to build a system for selling between seller and buyer.</li>
-                            <li>The web application utilizes C# and was developed using WINDOWS FORM APP in VISUAL STUDIO 2022.</li>
-                            <li>Designed to be visually engaging and user-friendly.</li>
+                            <li>System for selling between seller and buyer.</li>
+                            <li>Utilizes C# and Visual Studio 2022.</li>
                         </ul>
                     </div>
-
                     <div class="item-container">
                         <h3 class="text-xl font-bold text-white">Network System</h3>
                         <p class="text-indigo-400 text-sm mb-3">Group Project</p>
                         <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
-                            <li>Collaborated in a team to build a full network system that will be used by network architects to develop a network in a company.</li>
-                            <li>The network system was Fully developed using Packet Tracer.</li>
-                            <li>Designed to be cost effective while being able to perform daily business operations</li>
+                            <li>Full network system developed using Packet Tracer.</li>
                         </ul>
                     </div>
                 </div>
             </section>
-
         </div>
     </main>
 
     <footer id="contact" class="text-center p-12 border-t border-slate-800 relative z-10">
         <p class="text-gray-400 mb-2">Get in touch:</p>
         <a href="mailto:Wonderkganyagocr7@gmail.com" class="text-indigo-400 text-xl hover:underline block mb-6">Wonderkganyagocr7@gmail.com</a>
-        
         <div class="flex justify-center gap-6 mb-8">
             <a href="https://www.linkedin.com/in/itumeleng-wonder-kganyago-32336427a" target="_blank" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/ItumelengKganyago" target="_blank" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-github"></i></a>
@@ -282,18 +250,35 @@
             <a href="https://www.facebook.com/share/v/173f2tpZc6/" target="_blank" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
             <a href="https://wa.me/27646926851?text=Hello%20Itumeleng" target="_blank" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
         </div>
-        
         <p class="text-gray-500 text-sm">© 2025 Itumeleng Wonder Kganyago. All Rights Reserved.</p>
     </footer>
 
     <script>
         const stickyHeader = document.getElementById('sticky-header');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Sticky Header Logic
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) {
                 stickyHeader.style.top = '0';
             } else {
                 stickyHeader.style.top = '-100px';
+                mobileMenu.classList.remove('active'); // Close menu if we scroll back to top
             }
+        });
+
+        // Toggle Mobile Menu
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close Mobile Menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
         });
     </script>
 </body>
