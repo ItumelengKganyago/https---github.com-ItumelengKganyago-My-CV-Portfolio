@@ -280,38 +280,6 @@
                 mobileMenu.classList.remove('active');
             });
         });
-        const stickyHeader = document.getElementById('sticky-header');
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        // This ensures the page always loads at the top
-        window.scrollTo(0, 0);
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-
-        // Sticky Header Logic
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                stickyHeader.style.top = '0';
-            } else {
-                stickyHeader.style.top = '-100px';
-                mobileMenu.classList.remove('active'); 
-            }
-        });
-
-        // Toggle Mobile Menu
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close Mobile Menu when a link is clicked
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
     </script>
 </body>
 </html>
