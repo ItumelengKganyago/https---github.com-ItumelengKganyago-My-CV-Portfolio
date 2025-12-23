@@ -23,7 +23,19 @@
         .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .item-container { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(99, 102, 241, 0.15); border-radius: 0.75rem; padding: 1.5rem; transition: all 0.3s ease; }
         .item-container:hover { border-color: #6366f1; transform: translateY(-2px); }
-        #mobile-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 1rem 0; }
+
+        /* Mobile Menu Styling */
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
         #mobile-menu.active { display: flex; }
     </style>
 </head>
@@ -42,13 +54,18 @@
                 <img src="Images/My_Pic.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-indigo-500">
                 <span class="text-white font-bold text-lg">Itumeleng W. Kganyago</span>
             </div>
+            
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#about-me" class="text-gray-300 hover:text-white transition">About</a>
                 <a href="#skills" class="text-gray-300 hover:text-white transition">Skills</a>
                 <a href="#projects" class="text-gray-300 hover:text-white transition">Projects</a>
                 <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
             </div>
-            <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+
+            <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <div id="mobile-menu" class="md:hidden flex flex-col items-center space-y-4 font-medium">
                 <a href="#about-me" class="mobile-link text-gray-300 hover:text-white transition">About</a>
                 <a href="#skills" class="mobile-link text-gray-300 hover:text-white transition">Skills</a>
@@ -62,39 +79,84 @@
         <div class="opacity-0 fade-in">
             <img src="Images/My_Pic.jpg" alt="Profile" class="w-40 h-40 rounded-full object-cover shadow-2xl mx-auto border-4 border-indigo-500 ring-4 ring-indigo-500/30">
         </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-6 mb-2 opacity-0 fade-in fade-in-delay-1">Itumeleng Wonder Kganyago</h1>
-        <p class="text-lg md:text-xl text-indigo-300 mb-8 opacity-0 fade-in fade-in-delay-2">Welcome to my Digital Portfolio</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-6 mb-2 opacity-0 fade-in fade-in-delay-1">
+            Itumeleng Wonder Kganyago
+        </h1>
+        <p class="text-lg md:text-xl text-indigo-300 mb-8 opacity-0 fade-in fade-in-delay-2">
+            Welcome to my Digital Portfolio
+        </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 fade-in fade-in-delay-3">
-            <a href="#main-content" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-500 transform hover:scale-105 transition duration-300 w-full sm:w-auto"><i class="fas fa-arrow-down mr-2"></i> View My Work</a>
-            <a href="https://github.com/ItumelengKganyago/https---github.com-ItumelengKganyago-My-CV-Portfolio/raw/main/Images/Itumeleng_Kganyago_CV.pdf" download class="bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-slate-700 transform hover:scale-105 transition duration-300 w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-600"><i class="fas fa-download"></i> Download CV</a>
+            <a href="#main-content" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-500 transform hover:scale-105 transition duration-300 w-full sm:w-auto">
+                <i class="fas fa-arrow-down mr-2"></i> View My Work
+            </a>
+            <a href="https://github.com/ItumelengKganyago/https---github.com-ItumelengKganyago-My-CV-Portfolio/raw/main/Images/Itumeleng_Kganyago_CV.pdf" 
+               download class="bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-slate-700 transform hover:scale-105 transition duration-300 w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-600">
+                <i class="fas fa-download"></i> Download CV
+            </a>
             <div class="flex items-center justify-center gap-4">
-                <a href="https://www.linkedin.com/in/itumeleng-wonder-kganyago-32336427a" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/ItumelengKganyago" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-transform hover:scale-110"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/itumeleng-wonder-kganyago-32336427a" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-transform hover:scale-110">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ItumelengKganyago" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-transform hover:scale-110">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
+        </div>
+        <div class="absolute bottom-10 text-white opacity-0 fade-in fade-in-delay-4 animate-bounce">
+             <i class="fas fa-chevron-down"></i>
         </div>
     </header>
 
     <main id="main-content" class="relative z-10 px-4 max-w-4xl mx-auto">
         <div class="glass-card shadow-2xl rounded-2xl p-6 md:p-10 my-16">
+            
             <section id="about-me" class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">About Me</h2>
-                <p class="text-gray-300 leading-relaxed">Hello! I'm Itumeleng Wonder Kganyago, a dedicated BSc Information Technology graduate from North-West University (NWU). My journey in IT is fueled by a strong interest in programming with python, database design and systems management.</p>
+                <p class="text-gray-300 leading-relaxed">
+                    Hello! I'm Itumeleng Wonder Kganyago, a dedicated BSc Information Technology graduate from North-West University (NWU), with degree requirements completed and graduation pending. My journey in IT is fueled by a strong interest in programming with python, database design and systems management. I thrive on solving complex problems and am constantly expanding my knowledge in web development, networking, and programming. This portfolio showcases my academic journey, technical proficiencies, and projects, reflecting my commitment to continuous learning and contributing to innovative solutions.
+                </p>
             </section>
 
             <section class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Professional Summary</h2>
-                <p class="text-gray-300 leading-relaxed">Driven and focused North-West University (NWU) student pursuing a BSc IT Degree, with developing expertise in database design, database management system (MySQL, PostgreSQL, SQL Server, Oracle), operating systems, networking, programming, web development using C#.NET MAUI, and basic cybersecurity principles.</p>
+                <p class="text-gray-300 leading-relaxed">
+                    Driven and focused North-West University (NWU) student pursuing a BSc IT Degree, with developing expertise in database design, database management system (MySQL, PostgreSQL, SQL Server, Oracle), operating systems, networking, programming, web development using C#.NET MAUI, and basic cybersecurity principles. Demonstrated ability to write intermediate-level programs, create and maintain databases, collaborate effectively in team projects, conduct research, and analyze data. Possesses strong communication, problem-solving, and time-management skills, with strong passion for Database design and Administration. Committed to applying academic knowledge and practical skills to contribute to a company's success through hard work and continuous learning.
+                </p>
             </section>
 
             <section class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Education</h2>
                 <div class="item-container mb-6">
-                    <h3 class="text-xl font-bold text-indigo-400">Bachelor of Science in IT</h3>
-                    <p class="text-white">North-West University (NWU) | 2022 – 2025</p>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold text-indigo-400">Bachelor of Science in IT</h3>
+                        <span class="text-sm text-gray-400">2022 – 2025</span>
+                    </div>
+                    <p class="text-white font-medium mb-4">North-West University (NWU)</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1 text-sm text-gray-400 list-disc list-inside">
+                        <li>Introduction to computing and programming</li>
+                        <li>Structured programming</li>
+                        <li>Object oriented programming</li>
+                        <li>User interface programming</li>
+                        <li>Discrete Mathematics</li>
+                        <li>Advanced User Interface programming</li>
+                        <li>System analysis and design I & II</li>
+                        <li>Information security</li>
+                        <li>Data Structures and algorithms</li>
+                        <li>Communications skills</li>
+                        <li>Data analytics</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Computer Networks</li>
+                        <li>Databases</li>
+                        <li>Advanced Databases</li>
+                        <li>Decision Supports Systems I & II</li>
+                        <li>IT Developments</li>
+                        <li>Operating Systems</li>
+                    </ul>
                 </div>
                 <div class="item-container">
                     <h3 class="text-xl font-bold text-indigo-400">Matric</h3>
                     <p class="text-sm text-gray-400">Nkgopoleng Bakone High School | 2020</p>
+                    <p class="text-sm text-gray-400 mt-2">Sepedi H.L, English F.A.L, LO, Mathematics, Life Sciences, Geography, Agricultural Sciences.</p>
                 </div>
             </section>
 
@@ -103,15 +165,27 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="item-container">
                         <h4 class="text-indigo-400 font-bold mb-2">Programming Languages:</h4>
-                        <p class="text-sm text-gray-400">C++, Java, Python, C#</p>
+                        <p class="text-sm text-gray-400">C++, Java, Python, C# (with ASP.NET)</p>
                     </div>
                     <div class="item-container">
-                        <h4 class="text-indigo-400 font-bold mb-2">Database Management:</h4>
-                        <p class="text-sm text-gray-400">SQL Server, MySQL, PostgreSQL, Oracle</p>
+                        <h4 class="text-indigo-400 font-bold mb-2">Database & Server Management:</h4>
+                        <p class="text-sm text-gray-400">MS SQL Server, MySQL, PostgreSQL, Oracle</p>
+                    </div>
+                    <div class="item-container">
+                        <h4 class="text-indigo-400 font-bold mb-2">Operating Systems:</h4>
+                        <p class="text-sm text-gray-400">Windows, Linux</p>
                     </div>
                     <div class="item-container">
                         <h4 class="text-indigo-400 font-bold mb-2">Networking:</h4>
-                        <p class="text-sm text-gray-400">TCP/IP, Packet Tracer, LAN/WAN</p>
+                        <p class="text-sm text-gray-400">TCP/IP, VPN, LAN/WAN, Packet Tracer</p>
+                    </div>
+                    <div class="item-container">
+                        <h4 class="text-indigo-400 font-bold mb-2">Web/App Development:</h4>
+                        <p class="text-sm text-gray-400">C#, .NET MAUI, Java, Python</p>
+                    </div>
+                    <div class="item-container">
+                        <h4 class="text-indigo-400 font-bold mb-2">Cybersecurity Foundations:</h4>
+                        <p class="text-sm text-gray-400">Vulnerability assessment, firewalls, encryption</p>
                     </div>
                 </div>
             </section>
@@ -119,9 +193,11 @@
             <section id="certifications" class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Certifications</h2>
                 <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li>AWS Certified Cloud Practitioner</li>
-                    <li>Microsoft Azure Fundamentals</li>
-                    <li>Google Cloud Digital Leader</li>
+                    <li class="hover:text-indigo-400 transition-colors duration-200">AWS Certified Cloud Practitioner (CLF-C02) Cert Prep</li>
+                    <li class="hover:text-indigo-400 transition-colors duration-200">Microsoft Azure Fundamentals (AZ 900) Cert Prep</li>
+                    <li class="hover:text-indigo-400 transition-colors duration-200">Career Essentials in System Administration by Microsoft</li>
+                    <li class="hover:text-indigo-400 transition-colors duration-200">Cybersecurity Foundations & Threat Landscape</li>
+                    <li class="hover:text-indigo-400 transition-colors duration-200">Google Cloud Digital Leader Cert Prep</li>
                 </ul>
             </section>
 
@@ -129,12 +205,35 @@
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Projects</h2>
                 <div class="space-y-6">
                     <div class="item-container">
-                        <h3 class="text-xl font-bold text-white">Voting System App</h3>
-                        <p class="text-sm text-gray-400">Collaborated in a team to build a Voting system using JAVA and Android Studio.</p>
+                        <h3 class="text-xl font-bold text-white">Virtual CV (This Portfolio)</h3>
+                        <p class="text-indigo-400 text-sm mb-3">Individual Project</p>
+                        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+                            <li>Developed a dynamic, responsive portfolio website from scratch.</li>
+                            <li>Utilizes HTML and Tailwind CSS for styling.</li>
+                        </ul>
+                    </div>
+                    <div class="item-container">
+                        <h3 class="text-xl font-bold text-white">Full-Stack Voting System App</h3>
+                        <p class="text-indigo-400 text-sm mb-3">Group Project</p>
+                        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+                            <li>Collaborated in a team to build a Voting system for University elections.</li>
+                            <li>Utilizes CSS, HTML and JAVA developed using ANDROID STUDIO.</li>
+                        </ul>
                     </div>
                     <div class="item-container">
                         <h3 class="text-xl font-bold text-white">E Commerce System</h3>
-                        <p class="text-sm text-gray-400">Built using C# and Visual Studio 2022.</p>
+                        <p class="text-indigo-400 text-sm mb-3">Group Project</p>
+                        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+                            <li>System for selling between seller and buyer.</li>
+                            <li>Utilizes C# and Visual Studio 2022.</li>
+                        </ul>
+                    </div>
+                    <div class="item-container">
+                        <h3 class="text-xl font-bold text-white">Network System</h3>
+                        <p class="text-indigo-400 text-sm mb-3">Group Project</p>
+                        <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
+                            <li>Full network system developed using Packet Tracer.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -155,30 +254,27 @@
     </footer>
 
     <script>
-        // FORCES PAGE TO TOP ON EVERY LOAD/ACCESS
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0);
-
         const stickyHeader = document.getElementById('sticky-header');
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
+        // Sticky Header Logic
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) {
                 stickyHeader.style.top = '0';
             } else {
                 stickyHeader.style.top = '-100px';
-                mobileMenu.classList.remove('active'); 
+                mobileMenu.classList.remove('active'); // Close menu if we scroll back to top
             }
         });
 
+        // Toggle Mobile Menu
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
         });
 
+        // Close Mobile Menu when a link is clicked
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
