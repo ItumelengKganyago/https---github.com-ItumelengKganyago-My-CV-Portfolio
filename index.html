@@ -8,10 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Base styles and video background */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0c0a18; /* Fallback color */
+            background-color: #0c0a18;
         }
         html {
             scroll-behavior: smooth;
@@ -45,13 +44,9 @@
             background: radial-gradient(ellipse at center, rgba(12, 10, 24, 0.6) 0%, rgba(12, 10, 24, 0.9) 100%);
             z-index: -1;
         }
-
-        /* Styles for the sticky header that appears on scroll */
         #sticky-header {
             transition: top 0.5s ease-in-out;
         }
-
-        /* Animation for fade-in effect */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -63,10 +58,8 @@
         .fade-in-delay-2 { animation-delay: 0.4s; }
         .fade-in-delay-3 { animation-delay: 0.6s; }
         .fade-in-delay-4 { animation-delay: 0.8s; }
-        
-        /* Glassmorphism effect for the main content card */
         .glass-card {
-            background: rgba(15, 23, 42, 0.6); /* slate-900 with opacity */
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -78,7 +71,6 @@
     <div id="background-video-container">
         <video autoplay muted loop playsinline id="background-video">
             <source src="Images\World-map-Loop.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
     </div>
     <div id="video-overlay"></div>
@@ -90,10 +82,10 @@
                 <span class="text-white font-bold text-lg">Itumeleng W. Kganyago</span>
             </div>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#about-me" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
-                <a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-300">Skills</a>
-                <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300">Projects</a>
-                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+                <a href="#about-me" class="text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -108,30 +100,26 @@
         <p class="text-lg md:text-xl text-indigo-300 mb-8 opacity-0 fade-in fade-in-delay-2">
             Welcome to my Digital Portfolio
         </p>
-        
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 fade-in fade-in-delay-3">
-            <a href="#main-content" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-500 transform hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+            <a href="#main-content" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-500 transform hover:scale-105 transition-all w-full sm:w-auto">
                 <i class="fas fa-arrow-down mr-2"></i> View My Work
             </a>
-
             <a href="https://github.com/ItumelengKganyago/https---github.com-ItumelengKganyago-My-CV-Portfolio/raw/main/Images/Itumeleng_Kganyago_CV.pdf" 
                download="Itumeleng_Kganyago_CV.pdf"
                target="_blank"
                rel="noopener noreferrer"
-               class="bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-slate-700 transform hover:scale-105 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-600">
+               class="bg-slate-800 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-slate-700 transform hover:scale-105 transition-all w-full sm:w-auto flex items-center justify-center gap-2 border border-slate-600">
                 <i class="fas fa-download"></i> Download CV
             </a>
-
             <div class="flex items-center justify-center gap-4">
-                <a href="https://www.linkedin.com/in/itumeleng-wonder-kganyago-32336427a" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-300 hover:text-white transform hover:scale-110 transition-transform duration-300">
+                <a href="https://www.linkedin.com/in/itumeleng-wonder-kganyago-32336427a" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-300 hover:text-white transform hover:scale-110 transition-transform">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/ItumelengKganyago" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-300 hover:text-white transform hover:scale-110 transition-transform duration-300">
+                <a href="https://github.com/ItumelengKganyago" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-300 hover:text-white transform hover:scale-110 transition-transform">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
         </div>
-
         <div class="absolute bottom-10 text-white opacity-0 fade-in fade-in-delay-4">
              <i class="fas fa-chevron-down animate-bounce"></i>
         </div>
@@ -139,43 +127,34 @@
 
     <main id="main-content" class="relative z-10 px-4">
         <div class="glass-card shadow-2xl rounded-2xl p-6 md:p-10 max-w-4xl w-full mx-auto my-16">
-            
             <section id="about-me" class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">About Me</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    Hello! I'm Itumeleng Wonder Kganyago, a dedicated BSc IT student at North-West University. My journey in IT is fueled by a strong interest in database design, management systems, and cybersecurity. I thrive on solving complex problems and am constantly expanding my knowledge in web development, networking, and programming. This portfolio showcases my academic journey, technical proficiencies, and projects, reflecting my commitment to continuous learning and contributing to innovative solutions.
+                    Hello! I'm Itumeleng Wonder Kganyago, a dedicated BSc IT student at North-West University. My journey in IT is fueled by a strong interest in database design, management systems, and cybersecurity. I thrive on solving complex problems and am constantly expanding my knowledge in web development, networking, and programming.
                 </p>
             </section>
 
             <section id="summary" class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Professional Summary</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    Driven and focused North-West University (NWU) student pursuing a BSc IT Degree, with developing expertise in database design, database management system (MySQL, PostgreSQL, SQL Server, Oracle), operating systems, networking, programming, web development using C#.NET MAUI, and basic cybersecurity principles. Demonstrated ability to write intermediate-level programs, create and maintain databases, collaborate effectively in team projects, conduct research, and analyze data. Possesses strong communication, problem-solving, and time-management skills, with strong passion for Database design and Administration. Committed to applying academic knowledge and practical skills to contribute to a company's success through hard work and continuous learning.
+                    Driven and focused North-West University (NWU) student pursuing a BSc IT Degree, with expertise in database design, management systems (MySQL, PostgreSQL, SQL Server, Oracle), networking, and web development using C#.NET MAUI. Committed to applying academic knowledge to contribute to innovative solutions.
                 </p>
             </section>
 
             <section id="education" class="mb-12">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Education</h2>
-                <div class="mb-6 bg-slate-800/50 p-4 rounded-lg shadow-md border border-slate-700 hover:border-indigo-500 transition-all duration-300">
+                <div class="mb-6 bg-slate-800/50 p-4 rounded-lg border border-slate-700 hover:border-indigo-500 transition-all">
                     <div class="flex justify-between items-baseline mb-1">
                         <h3 class="text-xl font-semibold text-white">Bachelor of Science in IT</h3>
                         <span class="text-sm text-gray-400">2022 – 2025 (Current)</span>
                     </div>
                     <p class="text-indigo-400 font-medium">North-West University (NWU)</p>
-                    <ul class="list-disc list-inside text-gray-300 space-y-1 mt-3 pl-2">
-                        <li>Introduction to computing and programming</li>
-                        <li>Structured programming & Object oriented programming</li>
-                        <li>User interface programming & Advanced UI programming</li>
-                        <li>System analysis and design I & II</li>
-                        <li>Information security & Data Structures and algorithms</li>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1 mt-3 pl-2 text-sm">
+                        <li>Structured & Object-Oriented Programming</li>
+                        <li>Advanced UI Programming</li>
+                        <li>System Analysis and Design</li>
+                        <li>Information Security & Algorithms</li>
                     </ul>
-                </div>
-                <div class="bg-slate-800/50 p-4 rounded-lg shadow-md border border-slate-700 hover:border-indigo-500 transition-all duration-300">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h3 class="text-xl font-semibold text-white">Matric</h3>
-                        <span class="text-sm text-gray-400">2020</span>
-                    </div>
-                    <p class="text-indigo-400 font-medium">Nkgopoleng Bakone High School</p>
                 </div>
             </section>
 
@@ -183,61 +162,26 @@
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Skills</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                        <h4 class="font-semibold text-white mb-1">Programming Languages:</h4>
-                        <p class="text-gray-300 text-sm">C++, Java, Python, C# (with ASP.NET)</p>
+                        <h4 class="font-semibold text-white mb-1">Languages:</h4>
+                        <p class="text-gray-300 text-sm">C++, Java, Python, C# (ASP.NET)</p>
                     </div>
                     <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                        <h4 class="font-semibold text-white mb-1">Database & Server Management:</h4>
-                        <p class="text-gray-300 text-sm">MS SQL Server, MySQL, PostgreSQL, Oracle</p>
+                        <h4 class="font-semibold text-white mb-1">Databases:</h4>
+                        <p class="text-gray-300 text-sm">MS SQL, MySQL, PostgreSQL, Oracle</p>
                     </div>
                     <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                        <h4 class="font-semibold text-white mb-1">Operating Systems:</h4>
-                        <p class="text-gray-300 text-sm">Windows, Linux</p>
-                    </div>
-                    <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                        <h4 class="font-semibold text-white mb-1">Networking:</h4>
+                        <h4 class="font-semibold text-white mb-1">Networks:</h4>
                         <p class="text-gray-300 text-sm">TCP/IP, VPN, LAN/WAN, Packet Tracer</p>
                     </div>
-                    <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                        <h4 class="font-semibold text-white mb-1">Web/App Development:</h4>
-                        <p class="text-gray-300 text-sm">C#, .NET MAUI, Java, Python</p>
-                    </div>
-                    <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                        <h4 class="font-semibold text-white mb-1">Cybersecurity:</h4>
-                        <p class="text-gray-300 text-sm">Vulnerability assessment, firewalls, encryption</p>
-                    </div>
                 </div>
-            </section>
-
-            <section id="certifications" class="mb-12">
-                <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Certifications</h2>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li class="hover:text-indigo-400 transition-colors duration-200">AWS Certified Cloud Practitioner (CLF-C02) Cert Prep</li>
-                    <li class="hover:text-indigo-400 transition-colors duration-200">Microsoft Azure Fundamentals (AZ 900) Cert Prep</li>
-                    <li class="hover:text-indigo-400 transition-colors duration-200">Career Essentials in System Administration by Microsoft</li>
-                    <li class="hover:text-indigo-400 transition-colors duration-200">Cybersecurity Foundations & Threat Landscape</li>
-                    <li class="hover:text-indigo-400 transition-colors duration-200">Google Cloud Digital Leader Cert Prep</li>
-                </ul>
             </section>
 
             <section id="projects">
                 <h2 class="text-3xl font-bold text-white border-b-2 border-indigo-500 pb-3 mb-6">Projects</h2>
-                <div class="mb-6 bg-slate-800/50 p-4 rounded-lg shadow-md border border-slate-700 hover:border-indigo-500 transition-all duration-300">
-                    <h3 class="text-xl font-semibold text-white mb-1">Virtual CV (This Portfolio)</h3>
-                    <p class="text-indigo-400 font-medium mb-3">Individual Project | <a href="https://github.com/ItumelengKganyago" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub Repository</a></p>
-                    <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm">
-                        <li>Developed a dynamic, responsive portfolio website from scratch.</li>
-                        <li>Utilizes HTML, Tailwind CSS for styling, and JavaScript for interactivity.</li>
-                        <li>Designed to be visually engaging and user-friendly.</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800/50 p-4 rounded-lg shadow-md border border-slate-700 hover:border-indigo-500 transition-all duration-300">
-                    <h3 class="text-xl font-semibold text-white mb-1">Full-Stack Web App</h3>
-                    <p class="text-indigo-400 font-medium mb-3">Group Project | <a href="https://github.com/ItumelengKganyago" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub Repository</a></p>
-                     <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm">
-                        <li>Collaborated in a team to build a full-stack web application.</li>
-                        <li>Integrated frontend with a backend database system.</li>
-                    </ul>
+                <div class="mb-6 bg-slate-800/50 p-4 rounded-lg border border-slate-700 hover:border-indigo-500 transition-all">
+                    <h3 class="text-xl font-semibold text-white mb-1">Virtual CV Portfolio</h3>
+                    <p class="text-indigo-400 font-medium mb-3">Individual Project | <a href="https://github.com/ItumelengKganyago" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a></p>
+                    <p class="text-gray-300 text-sm">Developed a dynamic, responsive portfolio website utilizing HTML, Tailwind CSS, and JavaScript.</p>
                 </div>
             </section>
         </div>
@@ -247,10 +191,10 @@
         <p class="text-gray-400 mb-2">Get in touch:</p>
         <a href="mailto:Wonderkganyagocr7@gmail.com" class="text-indigo-400 hover:text-indigo-300 text-lg transition-colors">Wonderkganyagocr7@gmail.com</a>
         <div class="flex items-center justify-center gap-5 mt-4">
-            <a href="https://www.linkedin.com/in/itumeleng-wonder-kganyago-32336427a" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-400 hover:text-white transition-all duration-300">
+            <a href="https://www.linkedin.com/in/itumeleng-wonder-kganyago-32336427a" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-400 hover:text-white transition-all">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://github.com/ItumelengKganyago" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-400 hover:text-white transition-all duration-300">
+            <a href="https://github.com/ItumelengKganyago" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-400 hover:text-white transition-all">
                 <i class="fab fa-github"></i>
             </a>
         </div>
